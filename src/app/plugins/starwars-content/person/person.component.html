@@ -1,0 +1,12 @@
+<div class="person-container">
+  <div *ngIf="person">
+    <h3 class="title">{{person.name}}</h3>
+    <table class="attribute-table">
+      <tbody>
+        <tr><th>Gender:</th><td>{{person.gender}}</td></tr>
+        <tr><th>Height:</th><td>{{person.height}}</td></tr>
+        <tr><th>Mass:</th><td>{{person.mass}}</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>

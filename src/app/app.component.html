@@ -1,4 +1,3 @@
-
 <button small="true" (click)="browse()">Browse</button>
 <button small="true" (click)="present()" [disabled]="presenting">Present</button>
 <button small="true" (click)="refresh()">Refresh</button>
@@ -18,11 +17,7 @@
 
 <div *ngFor="let config of configs">
     <div style="height: 200px; width: 300px; position: relative; border: 1px solid;">
-        <content-host
-            #host
-            [config]="config"
-            [debugging]="debugging" 
-            [editing]="editing">
+        <content-host #host [config]="config" [debugging]="debugging" [editing]="editing">
         </content-host>
     </div>
     <button small="true" (click)="configure(host)">Configure</button>
@@ -31,7 +26,7 @@
     <pre>{{ config | json }}</pre>
 </div>
 
-<hr/>
+<hr />
 <h3>Overlay</h3>
 <div style="width: 200px; height: 200px; position: relative; display: inline-block;">
     <util-overlay type="loading" message="Loading..."></util-overlay>
@@ -41,23 +36,29 @@
     <util-overlay type="error" message="Some Error"></util-overlay>
 </div>
 
-<hr/>
+<hr />
 <h3>Recursive Dropdown Menu</h3>
 <button [matMenuTriggerFor]="menu.childMenu">Show Menu</button>
 <util-recursive-dropdown-menu #menu [items]="navItems"></util-recursive-dropdown-menu>
 
-<hr/>
+<hr />
 <h3>Notifications</h3>
 <button (click)="snack()">Snack Bar!</button>
 
-<hr/>
+<hr />
 <h3>Buttons</h3>
 <button color="primary" (click)="toggleSidebar()">Button</button>
 <button mat-raised-button color="primary">Primary</button>
 <button mat-raised-button color="accent">Accent</button>
 <button mat-raised-button color="warn">Warn</button>
 
-<hr/>
+<hr />
 <h3>Dialogs</h3>
 <button color="primary" (click)="info()">Info</button>
 <button color="warn" (click)="confirm()">Confirmation</button>
+
+<div style="width: 500px; height: 300px; position: relative; border: 1px solid;">
+    <content-starwars #starwars [debugging]="debugging" [editing]="false"></content-starwars>
+</div>
+<button small="true" (click)="configure(starwars)">Configure</button>
+<button small="true" (click)="present(starwars)">Present</button>

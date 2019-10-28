@@ -1,0 +1,13 @@
+<div class="starship-container">
+  <div *ngIf="starship">
+    <h3 class="title">{{starship.name}}</h3>
+    <table class="attribute-table">
+      <tbody>
+        <tr><th>Model:</th><td>{{starship.model}}</td></tr>
+        <tr><th>Manufacturer:</th><td>{{starship.manufacturer}}</td></tr>
+        <tr><th>Crew:</th><td>{{starship.crew}}</td></tr>
+        <tr><th>Passengers:</th><td>{{starship.passengers}}</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="film-container">
+  <starwars-crawl 
+    *ngIf="film" 
+    [titlePrefix]="'Episode ' + romanize(film.episode_id)" 
+    [title]="film.title" 
+    [content]="film.opening_crawl">
+  </starwars-crawl>
+</div>

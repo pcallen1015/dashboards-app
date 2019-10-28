@@ -1,0 +1,6 @@
+<div [ngSwitch]="mode">
+  <starwars-film *ngSwitchCase="'films'" [filmId]="itemId"></starwars-film>
+  <starwars-person *ngSwitchCase="'people'" [personId]="itemId"></starwars-person>
+  <starwars-starship *ngSwitchCase="'starships'" [starshipId]="itemId"></starwars-starship>
+  <starwars-null *ngSwitchDefault></starwars-null>
+</div>  

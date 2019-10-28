@@ -1,0 +1,74 @@
+.crawl-container {
+    background: #000000; 
+    color: #feda4a;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    overflow: hidden;
+}
+
+.crawl-container > .star-wars {
+    display: flex;
+    justify-content: center;
+    height: 800px;
+    perspective: 400px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-weight: 600;
+    font-size: 500%;
+    letter-spacing: 6px;
+    line-height: 150%;
+    text-align: justify;
+}
+
+.crawl-container > .star-wars > .crawl {
+    position: relative;
+    top: -100px;
+    transform-origin: 50% 100%;
+    animation: crawl 60s linear;
+}
+
+.crawl-container > .star-wars > .crawl .sub-title {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+.crawl-container > .star-wars > .crawl .sub-title > .episode-num {
+    margin-bottom: 1em;
+}
+
+.crawl-container > .star-wars > .crawl .sub-title > .episode-title {
+    transform: scaleY(2.5);
+    white-space: nowrap;
+}
+
+.crawl-container.paused > .star-wars > .crawl {
+    animation-play-state: paused;
+}
+
+.crawl-container > .fade {
+    position: relative;
+    width: 100%;
+    /* min-height: 25vh; */
+    height: 40%;
+    top: -10px;
+    background-image: linear-gradient(0deg, transparent, black 75%);
+    z-index: 1;
+}
+
+@keyframes crawl {
+    0% {
+      /* The element starts below the screen */
+      top: 0;
+      /* Rotate the text 20 degrees but keep it close to the viewer */
+      transform: rotateX(20deg) translateZ(0);
+    }
+    100% { 
+      /* This is a magic number, but using a big one to make sure the text is fully off the screen at the end */
+      top: -6000px;
+      /* Slightly increasing the rotation at the end and moving the text far away from the viewer */
+      transform: rotateX(25deg) translateZ(-2500px);
+    }
+}

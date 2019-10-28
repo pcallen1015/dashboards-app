@@ -1,0 +1,14 @@
+<div class="crawl-container" [ngClass]="{'paused': paused}">
+  <div class="fade"></div>
+  <div class="star-wars">
+    <div class="crawl">
+      <div class="sub-title">
+        <div class="episode-num">{{titlePrefix}}</div>
+        <div class="episode-title">{{title}}</div>
+      </div>
+      <div [innerHtml]="content"></div>
+    </div>
+  </div>
+  <button (click)="pause()" style="position: absolute; right: 0; bottom: 0;">{{paused ? 'Resume' : 'Pause'}}</button>
+</div>
+  

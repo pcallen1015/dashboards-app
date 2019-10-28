@@ -1,0 +1,29 @@
+.title {
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+table.attribute-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: 'Andale Mono';
+    line-height: 1.2;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+
+table.attribute-table tr:not(:last-child) {
+    border-bottom: 1px dotted #dfdfdf;
+}
+
+table.attribute-table th,
+table.attribute-table td {
+    padding: 2px 0 2px 0;
+    vertical-align: top;
+}
+
+table.attribute-table th + td {
+    padding-left: 12px;
+}
