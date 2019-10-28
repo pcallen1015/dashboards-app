@@ -57,8 +57,17 @@
 <button color="primary" (click)="info()">Info</button>
 <button color="warn" (click)="confirm()">Confirmation</button>
 
+<!-- Star Wars Content -->
 <div style="width: 500px; height: 300px; position: relative; border: 1px solid;">
     <content-starwars #starwars [debugging]="debugging" [editing]="false"></content-starwars>
 </div>
 <button small="true" (click)="configure(starwars)">Configure</button>
 <button small="true" (click)="present(starwars)">Present</button>
+
+<!-- Message Content -->
+<div style="width: 500px; height: 300px; position: relative; border: 1px solid;">
+    <content-message #message [debugging]="debugging" [editing]="editing">
+    </content-message>
+</div>
+<button cuiButton small="true" (click)="configure(message)">Configure</button>
+<button cuiButton small="true" (click)="present(message)">Present</button>
