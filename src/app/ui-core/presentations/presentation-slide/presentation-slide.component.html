@@ -1,0 +1,21 @@
+<div class="slide">
+  <div class="slide__title" *ngIf="slide.title">
+    <h1>{{slide.title}}</h1>
+  </div>
+  <div class="slide__content">
+    <content-host [config]="slide.contentConfig"></content-host>
+  </div>
+  <div class="slide__actions">
+    <div class="btn-group">
+      <button *ngIf="hasPrevious" color="gray-ghost" (click)="back()">
+        <span class="icon-chevron-left"></span>
+        <span>Back</span>
+      </button>
+      <button *ngIf="hasNext" color="gray-ghost" (click)="next()">
+        <span>Next</span>
+        <span class="icon-chevron-right"></span>
+      </button>
+    </div>
+    <button color="negative" (click)="end()">End</button>
+  </div>
+</div>

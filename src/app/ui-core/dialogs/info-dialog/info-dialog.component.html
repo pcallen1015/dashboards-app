@@ -1,0 +1,14 @@
+<div class="modal__content">
+  <div class="modal__header" *ngIf="title">
+    <h3>
+      <span class="icon-info"></span>
+      <span>{{title}}</span>
+    </h3>
+  </div>
+  <div class="modal__body" *ngIf="message">
+    <p>{{message}}</p>
+  </div>
+  <div class="modal__footer text-center">
+    <button color="primary" (click)="done()">{{buttonText}}</button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="modal__content">
+  <div class="modal__header">
+    <h3>
+      <span class="icon-warning"></span>
+      <span>{{title}}</span>
+    </h3>
+  </div>
+  <div class="modal__body">
+    <p>{{prompt}}</p>
+  </div>
+  <div class="modal__footer text-center">
+    <button color="primary" (click)="confirm()">{{confirmText}}</button>
+    <button color="negative" (click)="reject()">{{rejectText}}</button>
+  </div>
+</div>

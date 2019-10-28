@@ -1,0 +1,13 @@
+<div class="overlay {{type}}">
+  <div class="overlay-body" [ngSwitch]="type">
+    <div *ngSwitchCase="'loading'">
+      <h4 class="overlay-message">{{message || 'Loading...'}}</h4>
+    </div>
+    <div *ngSwitchCase="'error'">
+      <h4 class="overlay-message">{{message || 'ERROR'}}</h4>
+    </div>
+    <div *ngSwitchCaseDefault>
+      DEFAULT
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<form (ngSubmit)="submit()" [formGroup]="form">
+  <div style="text-align: initial; margin-bottom: 1.5rem;">
+    <!-- Configuration Options (Parameters) -->
+    <configure-content-container-option-form 
+      *ngFor="let option of options" 
+      [option]="option" 
+      [form]="form">
+    </configure-content-container-option-form>
+  </div>
+
+  <button color="primary" type="submit" [disabled]="!form.valid">Accept</button>
+  <button color="negative" type="button" (click)="cancel()">Cancel</button>
+</form>

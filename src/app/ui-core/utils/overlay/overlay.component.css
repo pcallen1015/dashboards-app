@@ -1,0 +1,27 @@
+.overlay {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f2f2f2;
+    opacity: 0.8;
+    z-index: 2; }
+
+    .overlay.error {
+        background-color: #cf2030;
+        color: #fff;
+        opacity: 1.0;
+    }
+
+.overlay > .overlay-body {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+    
+    .overlay > .overlay-body .overlay-icon {
+        margin-bottom: 0.5rem;
+    }
