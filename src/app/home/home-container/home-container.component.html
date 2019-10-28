@@ -1,0 +1,17 @@
+<div *ngIf="ready" class="home-container">
+
+  <!-- View Found -->
+  <view *ngIf="view" [view]="view"></view>
+
+  <!-- No view found, prompt for setup -->
+  <div *ngIf="!view" class="absolute-center text-center panel panel--raised panel--loose">
+    <div class="panel__body">
+      <h1>It looks like you haven't set up your home page yet...</h1>
+      <p>
+        <button color="primary" wide="true" (click)="createView()">Get Started!</button>
+      </p>
+    </div>
+  </div>
+
+</div>
+<util-overlay *ngIf="!ready" type="loading" message="Loading..."></util-overlay>  

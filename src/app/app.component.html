@@ -1,73 +1,41 @@
-<button small="true" (click)="browse()">Browse</button>
-<button small="true" (click)="present()" [disabled]="presenting">Present</button>
-<button small="true" (click)="refresh()">Refresh</button>
-<button small="true" (click)="editing = !editing">Edit? {{editing}}</button>
-<button small="true" (click)="debugging = !debugging">Debug? {{debugging}}</button>
-<h3>Content Components</h3>
-
-<div>
-    <div style="height: 200px; width: 300px; position: relative; border: 1px solid;">
-        <null-content #nullContent [config]="config" [editing]="editing" [debugging]="debugging"></null-content>
+<mat-sidenav-container class="app__container" [ngClass]="theme ? 'theme-' + theme : ''">
+    <mat-sidenav #sidenav mode="over" class="app__sidenav">
+        <div class="sidebar">
+            <div class="sidebar__header">
+                <div *ngIf="sidenavOptions.title" class="sidebar__header-title">{{sidenavOptions.title}}</div>
+                <div *ngIf="sidenavOptions.toolbar && sidenavOptions.toolbar.buttons.length > 0" class="sidebar__header-toolbar">
+                    <button *ngFor="let button of sidenavOptions.toolbar.buttons" (click)="button.action()">
+                        <i [ngClass]="button.icon"></i>
+                    </button>
+                </div>
+            </div>
+            <ul *ngFor="let item of navs" util-recursive-nav-item [item]="item"></ul>
+            <ul>
+                <li class="sidebar__drawer">
+                    <a [matMenuTriggerFor]="menu.childMenu">
+                        <span>DROPDOWN TEST</span>
+                    </a>
+                    <util-recursive-dropdown-menu #menu [items]="navs"></util-recursive-dropdown-menu>
+                </li>
+            </ul>
+        </div>
+    </mat-sidenav>
+    <div class="app__content">
+        <div class="app__header">
+            <!-- <cui-header [options]="headerOptions"></cui-header> -->
+            <div>Some Header <button (click)="toggleSidenav()">Nav</button></div>
+        </div>
+        <div class="app__body">
+            <router-outlet *ngIf="ready && !error"></router-outlet>
+        </div>
+        <div class="app__footer">
+            <ul class="footer-menu">
+                <li><a (click)="about()">About</a></li>
+                <li><a>Thing 2</a></li>
+                <li><a>Thing 3</a></li>
+            </ul>
+        </div>
     </div>
-    <button small="true" (click)="configure(nullContent)">Configure</button>
-    <button small="true" (click)="presentContainer(nullContent)">Present</button>
-    <pre>{{ nullContent.config | json}}</pre>
-    <pre>{{ config | json}}</pre>
-</div>
-
-<div *ngFor="let config of configs">
-    <div style="height: 200px; width: 300px; position: relative; border: 1px solid;">
-        <content-host #host [config]="config" [debugging]="debugging" [editing]="editing">
-        </content-host>
-    </div>
-    <button small="true" (click)="configure(host)">Configure</button>
-    <button small="true" (click)="presentContainer(host)">Present</button>
-    <pre>{{ host.config | json }}</pre>
-    <pre>{{ config | json }}</pre>
-</div>
-
-<hr />
-<h3>Overlay</h3>
-<div style="width: 200px; height: 200px; position: relative; display: inline-block;">
-    <util-overlay type="loading" message="Loading..."></util-overlay>
-</div>
-
-<div style="width: 200px; height: 200px; position: relative; display: inline-block;">
-    <util-overlay type="error" message="Some Error"></util-overlay>
-</div>
-
-<hr />
-<h3>Recursive Dropdown Menu</h3>
-<button [matMenuTriggerFor]="menu.childMenu">Show Menu</button>
-<util-recursive-dropdown-menu #menu [items]="navItems"></util-recursive-dropdown-menu>
-
-<hr />
-<h3>Notifications</h3>
-<button (click)="snack()">Snack Bar!</button>
-
-<hr />
-<h3>Buttons</h3>
-<button color="primary" (click)="toggleSidebar()">Button</button>
-<button mat-raised-button color="primary">Primary</button>
-<button mat-raised-button color="accent">Accent</button>
-<button mat-raised-button color="warn">Warn</button>
-
-<hr />
-<h3>Dialogs</h3>
-<button color="primary" (click)="info()">Info</button>
-<button color="warn" (click)="confirm()">Confirmation</button>
-
-<!-- Star Wars Content -->
-<div style="width: 500px; height: 300px; position: relative; border: 1px solid;">
-    <content-starwars #starwars [debugging]="debugging" [editing]="false"></content-starwars>
-</div>
-<button small="true" (click)="configure(starwars)">Configure</button>
-<button small="true" (click)="present(starwars)">Present</button>
-
-<!-- Message Content -->
-<div style="width: 500px; height: 300px; position: relative; border: 1px solid;">
-    <content-message #message [debugging]="debugging" [editing]="editing">
-    </content-message>
-</div>
-<button cuiButton small="true" (click)="configure(message)">Configure</button>
-<button cuiButton small="true" (click)="present(message)">Present</button>
+</mat-sidenav-container>
+<util-overlay *ngIf="error || !ready" [type]="error ? 'error' : 'loading'" [message]="error ? error.message : 'Loading Application...'"></util-overlay>
+    

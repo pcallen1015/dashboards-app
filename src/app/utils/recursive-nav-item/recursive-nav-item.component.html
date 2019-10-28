@@ -1,0 +1,6 @@
+<li [ngClass]="classes">
+  <a (click)="performAction()">
+    <span>{{item.label}}</span>
+  </a>
+  <ul *ngFor="let child of item.children" util-recursive-nav-item [item]="child"></ul>
+</li>

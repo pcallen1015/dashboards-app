@@ -1,0 +1,12 @@
+{
+    "/api": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "pathRewrite": { "^/api": "" }
+    },
+    "/gravity": {
+        "target": "http://iv-ci-2:6020/gravity",
+        "secure": false,
+        "pathRewrite": { "^/gravity": "" }
+    }
+}

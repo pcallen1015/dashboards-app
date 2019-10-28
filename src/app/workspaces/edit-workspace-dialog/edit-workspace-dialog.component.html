@@ -1,0 +1,12 @@
+<div class="modal__content">
+  <div class="modal__header">
+    <h3>{{isNew ? 'Create' : 'Edit'}} Workspace</h3>
+  </div>
+  <div class="modal__body">
+    <workspace-edit-form
+      [workspace]="workspace" 
+      (onSubmit)="done($event)" 
+      (onCancel)="done($event)">
+    </workspace-edit-form>
+  </div>
+</div>

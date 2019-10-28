@@ -1,0 +1,87 @@
+.dragdrop-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    // flex: 1;
+    margin: 12px;
+    background-color: white;
+    border: 2px solid #58585b;
+    box-sizing: border-box;
+    position: relative;
+
+    .dragdrop-container-header {
+        order: 1;
+        background-color: #dfdfdf;
+        padding: 8px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        font-size: 14px;
+        font-weight: 300;
+
+        + .dragdrop-container-body {
+            border-top: 2px solid #58585b;
+        }
+
+        > .left {
+            order: 1;
+            width: auto;
+            
+            &:not(:last-child) {
+                padding-right: 8px;
+            }
+        }
+
+        > .body {
+            order: 2;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        > .right {
+            order: 3;
+            width: auto;
+            
+            &:not(:first-child) {
+                padding-left: 8px;
+            }
+        }
+    }
+
+    .dragdrop-container-body {
+        order: 2;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .dragdrop-container-dropzone {
+        order: 3;
+        height: 0px;
+        padding: 0 10px;
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #9e9ea2;
+        font-weight: 400;
+        transition: all .1s ease-in-out;
+
+        &.drag-hint {
+            border-color: #6cc04a;
+            border: 2px solid #6cc04a;
+            color: #6cc04a;
+            height: 60px;
+        }
+
+        &.drag-over {
+            background-color: #6cc04a;
+            border-color: transparent;
+            color: white;
+        }
+    }
+}

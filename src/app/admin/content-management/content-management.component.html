@@ -1,0 +1,41 @@
+<div style="height: 100%; width: 100%; overflow: auto;">
+  <!--
+  <div>
+    <mat-form-field>
+      <mat-select placeholder="Select Workspace" (selectionChange)="onSelectedWorkspaceChange($event)">
+        <mat-option *ngFor="let workspace of workspaces" [value]="workspace">{{workspace.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button (click)="createWorkspace()">
+      <span class="icon-add"></span>
+      <span>Workspace</span>
+    </button>
+  </div>
+  -->
+
+  <div class="dragdrop">
+
+    <div class="dragdrop-trash" droppable [dragHintClass]="'drag-hint'" [dragOverClass]="'drag-over'" [dropScope]="root.allScopes" (onDrop)="onDeleteItem($event.dragData[0], $event.dragData[1])">
+      <div>
+        <h2>
+          <span class="icon-trash"></span>
+          <span>Drop Here to Delete</span>
+        </h2>
+        <p>Drop items here to delete them</p>
+      </div>
+    </div>
+
+    <div class="dragdrop-canvas" *ngIf="root">
+
+      <util-recursive-drag-drop-container 
+        *ngFor="let item of root.children" 
+        [parent]="root" 
+        [item]="item">
+      </util-recursive-drag-drop-container>
+
+    </div>
+
+  </div>
+
+  <pre>{{root | json}}</pre>
+</div>

@@ -1,0 +1,81 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import "~material-design-icons-iconfont/dist/material-design-icons.css";
+
+html {
+  font-family: "CiscoSans", "Arial", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body { 
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.app__container {
+  .header {
+    .header-bar {
+      height: 56px;
+    }
+
+    .page-title {
+      direction: rtl;
+    }
+  }
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.debugger {
+  font-family: monospace;
+  font-size: 10px;
+  // border: 1px solid #dfdfdf;
+  padding: 4px;
+  white-space: pre;
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 2;
+
+  > .overlay__mask {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      overflow: hidden;
+      background-color: #000000;
+      opacity: 0.8;
+  }
+
+  > .overlay__body {
+      position: absolute;
+      // color: #fff !important;
+  }
+}

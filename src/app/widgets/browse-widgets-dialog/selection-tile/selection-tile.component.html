@@ -1,0 +1,6 @@
+<div class="selection-tile" [ngClass]="{'selected': selected}" (click)="toggle()">
+  <div class="selection-tile-icon">
+    <span [class]="selected ? 'icon-check' : icon"></span>
+  </div>
+  <div class="selection-tile-footer">{{label}}</div>
+</div>

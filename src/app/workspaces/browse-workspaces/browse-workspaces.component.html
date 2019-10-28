@@ -1,0 +1,9 @@
+<div style="padding: 8px;">
+    <mat-grid-list *ngIf="workspaces.length > 0" cols="4" gutterSize="8" rowHeight="200px">
+        <mat-grid-tile *ngFor="let workspace of workspaces" colspan="1" rowspan="1">
+
+            <workspace-card [workspace]="workspace"></workspace-card>
+
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

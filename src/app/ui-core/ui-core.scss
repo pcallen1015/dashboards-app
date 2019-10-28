@@ -184,9 +184,6 @@ $custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $cus
     z-index: 1000 !important;
 }
 
-@import "~font-awesome/css/font-awesome.min.css";
-@import "~material-design-icons-iconfont/dist/material-design-icons.css";
-
 html, body {
     position: absolute;
     top: 0;

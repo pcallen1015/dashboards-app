@@ -1,0 +1,41 @@
+<div class="widget-grid-container">
+    <ngx-gridster 
+        *ngIf="configs.length > 0" 
+        class="widget-grid"
+        [(options)]="gridsterConfig" 
+        [draggableOptions]="{ handlerClass: 'widget__handle' }">
+
+        <ngx-gridster-item 
+            *ngFor="let config of configs; let i = index;" 
+            [(x)]="config.x" 
+            [(y)]="config.y" 
+            [(w)]="config.w" 
+            [(h)]="config.h" 
+            [options]="{minWidth: 1, maxWidth: 100, minHeight: 1, maxHeight: 100}" 
+            (start)="onWidgetChangeStart($event, i)"
+            (change)="onWidgetChange($event, i)"
+            (end)="onWidgetChangeEnd($event, i)">
+
+            <div class="gridster-content-container">
+
+                <widget
+                    [id]="i"
+                    [config]="config"
+                    [editing]="editable && editing"
+                    [debugging]="debugging"
+                    (onChangeStart)="onWidgetChangeStart($event, i)"
+                    (onChange)="onWidgetChange($event, i)"
+                    (onChangeEnd)="onWidgetChangeEnd($event, i)"
+                    (onRemove)="removeWidget(config)">
+                </widget>
+                
+            </div>
+
+        </ngx-gridster-item>
+        
+    </ngx-gridster>
+
+    <div *ngIf="debugging" class="debugger">
+        {{configs | json}}
+    </div>
+</div>

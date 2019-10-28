@@ -1,0 +1,67 @@
+<div class="widget {{type.toString()}}" >
+
+    <!-- Editing Actions -->
+    <div class="widget__section" *ngIf="editing">
+        <span class="widget__handle">
+        <button>
+            <i class="fas fa-arrows-alt fa-2x"></i>
+        </button>
+        </span>
+        <button (click)="configure()">
+            <i class="fas fa-cog fa-2x"></i>
+        </button>
+        <button (click)="remove()">
+            <i class="fas fa-trash-alt fa-2x"></i>
+        </button>
+    </div>
+
+    <!-- Widget Header -->
+    <div class="widget__section widget__header" *ngIf="config.showHeader">
+        <!--
+        <div class="section__left">
+            <a><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+        </div>
+        -->
+        <div class="section__body">
+            <h6>{{ config.title || '&nbsp;' }}</h6>
+        </div>
+        <!--
+        <div class="section__right">
+            <button (click)="refresh()"><i class="fa fa-fw fa-refresh" aria-hidden="true"></i></button>
+        </div>
+        -->
+    </div>
+
+    <!-- Widget Body -->
+    <div class="widget__section widget__body">
+        <content-host
+            [config]="config"
+            [editing]="editing"
+            [debugging]="debugging">
+        </content-host>
+    </div>
+
+    <!-- Widget Footer -->
+    <div class="widget__section widget__footer" *ngIf="config.showFooter">
+        <div class="section__left">
+            <a>LEFT</a>
+        </div>
+        <div class="section__body">
+            BODY
+        </div>
+        <div class="section__right">
+            <a>RIGHT</a>
+        </div>
+    </div>
+
+    <!-- Widget Debugging -->
+    <div class="widget__section" *ngIf="debugging">
+        <div>
+            <button (click)="reflow()">Reflow</button>
+            <button (click)="refresh()">Refresh</button>
+        </div>
+        <div class="debugger">
+            {{config || 'no config' | json}}
+        </div>
+    </div>
+</div>

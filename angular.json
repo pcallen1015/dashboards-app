@@ -27,7 +27,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
+              "src/styles/core.scss",
+              "src/styles/sidenav.scss",
+              "src/styles/typography.css",
               "src/app/ui-core/ui-core.scss"
             ],
             "scripts": [],

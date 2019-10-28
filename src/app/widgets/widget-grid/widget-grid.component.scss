@@ -1,0 +1,26 @@
+::ng-deep {
+    .gridster-container {
+        .gridster-item-inner {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            > .gridster-content-container {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 4px;
+                overflow: hidden;
+            }
+        }
+
+        .position-highlight {
+            border-radius: 0;
+            background-color: #dfdfdf;
+        }
+    }
+}

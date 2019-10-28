@@ -1,0 +1,34 @@
+<div class="dragdrop-container" draggable [dragScope]="parent.scope" [dragData]="[parent, item]">
+  <!-- Header -->
+  <div class="dragdrop-container-header">
+    <div class="body">{{item.name}}</div>
+    <div class="right">
+      <a (click)="add()"><span class="icon-add"></span></a>
+    </div>
+    <div class="right">
+      <a (click)="delete()"><span class="icon-trash"></span></a>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="dragdrop-container-body" *ngIf="item.children.length > 0">
+
+    <util-recursive-drag-drop-container
+      *ngFor="let child of item.children"
+      [parent]="item"
+      [item]="child">
+    </util-recursive-drag-drop-container>
+
+  </div>
+
+  <!-- Dropzone -->
+  <div
+    class="dragdrop-container-dropzone" 
+    droppable
+    [dragHintClass]="'drag-hint'"
+    [dragOverClass]="'drag-over'"
+    [dropScope]="item.scope"
+    (onDrop)="onItemDrop($event)">
+    <span>Drop {{item.childDescription}}s Here</span>
+  </div>
+</div>

@@ -1,0 +1,153 @@
+.mat-sidenav .sidenav-header {
+	font-size: 24px;
+	font-weight: 200;
+	padding: 12px 20px;
+	/* white-space: nowrap; */
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+	.mat-sidenav .sidenav-header > a {
+		color: inherit;
+		text-decoration: none;
+	}
+	
+	.mat-sidenav .sidenav-header > a.flex {
+		display: flex;
+		flex-direction: row;
+	}
+
+		.mat-sidenav .sidenav-header > a.flex > .flex-body {
+			flex: 1;
+			order: 2;
+		}
+
+		.mat-sidenav .sidenav-header > a.flex > .flex-left,
+		.mat-sidenav .sidenav-header > a.flex > .flex-right {
+			width: auto;
+		}
+
+		.mat-sidenav .sidenav-header > a.flex > .flex-left {
+			order: 1;
+			padding-right: 12px;
+		}
+
+		.mat-sidenav .sidenav-header > a.flex > .flex-right {
+			order: 3;
+			padding-left: 12px;
+		}
+
+.mat-sidenav ul.sidenav-sections {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+	.mat-sidenav ul.sidenav-sections > li.sidenav-section {
+		border-bottom: 1px solid;
+		border-color: #dfdfdf;
+		padding-bottom: 8px;
+	}
+
+		.mat-sidenav ul.sidenav-sections > li.sidenav-section > .sidenav-section-header {
+			display: block;
+			line-height: 32px;
+			font-size: 16px;
+			padding: 8px 16px 0;
+			text-align: left;
+			font-weight: 400;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+			.mat-sidenav ul.sidenav-sections > li.sidenav-section > .sidenav-section-header.flex {
+				display: flex;
+				flex-direction: row;
+			}
+
+				.mat-sidenav ul.sidenav-sections > li.sidenav-section > .sidenav-section-header.flex > .flex-body {
+					flex: 1;
+					order: 2;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+
+				.mat-sidenav ul.sidenav-sections > li.sidenav-section > .sidenav-section-header.flex > .flex-left,
+				.mat-sidenav ul.sidenav-sections > li.sidenav-section > .sidenav-section-header.flex > .flex-right {
+					width: auto;
+				}
+
+				.mat-sidenav ul.sidenav-sections > li.sidenav-section > .sidenav-section-header.flex > .flex-left {
+					order: 1;
+				}
+
+				.mat-sidenav ul.sidenav-sections > li.sidenav-section > .sidenav-section-header.flex > .flex-right {
+					order: 3;
+				}
+
+	.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+		.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections > li.sidenav-subsection > .sidenav-subsection-header,
+		.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections > li.sidenav-subsection > a {
+			display: block;
+			line-height: 28px;
+			font-size: 14px;
+			font-weight: 400;
+			padding: 4px 16px 0;
+			text-align: left;
+			text-decoration: none;
+			white-space: nowrap;
+			outline: none;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections > li.sidenav-subsection > a {
+			color: inherit;
+			padding: 4px 16px;
+			transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+		}
+
+		.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections > li.sidenav-subsection > a.flex {
+			display: flex;
+			flex-direction: row;
+		}
+
+			.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections > li.sidenav-subsection > a.flex > .flex-body {
+				flex: 1;
+				order: 2;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections > li.sidenav-subsection > a.flex > .flex-left,
+			.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections > li.sidenav-subsection > a.flex > .flex-right {
+				width: auto;
+			}
+
+			.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections > li.sidenav-subsection > a.flex > .flex-left {
+				order: 1;
+			}
+
+			.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections > li.sidenav-subsection > a.flex > .flex-right {
+				order: 3;
+			}
+
+		.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections > li.sidenav-subsection > .sidenav-subsection-content {
+			padding: 4px 16px;
+		}
+
+	.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections + ul.sidenav-subsections {
+		margin-top: 20px;
+	}
+
+	.mat-sidenav ul.sidenav-sections > li.sidenav-section > ul.sidenav-subsections:first-child {
+		padding-top: 8px;
+	}

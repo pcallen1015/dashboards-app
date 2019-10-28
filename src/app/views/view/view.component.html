@@ -1,0 +1,78 @@
+<div class="view" [ngClass]="{'editing': editing }" *ngIf="view">
+
+  <!-- Header -->
+  <div class="view__section header">
+    <div class="section__content">
+      <div class="header__body center">
+        <h4>{{view.name}}</h4>
+        <p>Description: {{view.description}}</p>
+      </div>
+      <div class="header__right center">
+        <div class="btn-group">
+          <!-- <button (click)="debug()">Debug</button> -->
+          <!-- <button (click)="refresh()">Refresh</button> -->
+          <!-- <button (click)="reflow()">Reflow</button> -->
+          <button color="gray-ghost" (click)="present()" *ngIf="!editing && hasContent" [disabled]="presenting">
+            <span class="icon-slides"></span>
+            <span>Present</span>
+          </button>
+          <button (click)="undo()" *ngIf="editing && hasChanges">
+            <span class="icon-back"></span>
+            <span>Undo</span>
+          </button>
+          <button color="gray-ghost" *ngIf="editing" (click)="addWidget()">
+            <span class="icon-add"></span>
+            <span>Widget</span>
+          </button>
+          <button color="primary" *ngIf="!editing" (click)="edit()">
+            <span class="icon-edit"></span>
+            <span>Edit</span>
+          </button>
+          <button color="primary" *ngIf="editing" (click)="save()" [disabled]="saving">
+            <span class="icon-save"></span>
+            <span>Save</span>
+          </button>
+          <button color="negative" *ngIf="editing" (click)="cancel()">
+            <span class="icon-close"></span>
+            <span>Cancel</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="view__section body">
+    <div class="section__content">
+
+      <!-- Widget Grid -->
+      <widget-grid
+        *ngIf="hasContent"
+        [editable]="view.editable"
+        [columns]="view.columns"
+        [configs]="view.widgetConfigs"
+        [editing]="editing"
+        [debugging]="debugging"
+        (onRemoveWidget)="removeWidget($event)"
+        (onChangeStart)="onWidgetGridChangeStart($event)"
+        (onChange)="onWidgetGridChange($event)"
+        (onChangeEnd)="onWidgetGridChangeEnd($event)">
+      </widget-grid>
+
+      <!-- No Content -->
+      <div *ngIf="!hasContent">No Content</div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <!--
+  <div class="view__section footer">
+    <div class="section__content">
+      FOOTER
+    </div>
+  </div>
+-->
+
+</div>
+<div *ngIf="!view">View Not Found</div>

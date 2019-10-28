@@ -1,0 +1,42 @@
+.module {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    > .mat-sidenav-container {
+        height: 100%;
+        width: 100%;
+    }
+
+    .sidenav-main-content {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+
+        > .sidenav-actions {
+            width: auto;
+            height: 100%;
+            align-self: center;
+
+            > .sidenav-actions-button {
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                padding: 8px;
+                cursor: pointer;
+                text-align: center;
+            }
+        }
+
+        > .sidenav-main-content-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+    }
+}

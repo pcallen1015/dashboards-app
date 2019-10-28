@@ -1,0 +1,92 @@
+$defaults: (
+    'white': #ffffff,
+
+    'background-normal': #2b5592,
+    'background-light': #64bbe3,
+    'background-dark': #005073,
+
+    'text-normal': #58585b,
+    'text-light': #ffffff,
+    // 'text-dark'
+    // 'text-muted'
+
+    'primary': #005073,
+    'secondary': #005073,
+    // 'info'
+    'success': #6cc04a,
+    'warning': #ffcc00,
+    'danger': #cf2030,
+) !default;
+
+$themes: (
+    'endor': (
+        'primary': #34623f,
+        
+        'background-normal': #34623f,
+        'background-light': #607744,
+        'background-dark': #1e2f23,
+
+        // 'text-normal': #58585b,
+        // 'text-light': #ffffff,
+        // 'text-dark'
+        // 'text-muted'
+
+        'color1': #b39c4d,
+        'color2': #768948,
+        'color3': #607744,
+        'color4': #34623f,
+        'color5': #1e2f23,
+    ),
+    'naboo': (
+        'primary': #5989b0,
+
+        'background-normal': #7896ac,
+        'background-light': #88913c,
+        'background-dark': #5989b0,
+
+        // 'text-light': #ffffff,
+
+        'color1': #5989b0,
+        'color2': #f9d59b,
+        'color3': #fbffc5,
+        'color4': #88913c,
+        'color5': #7896ac,
+    ),
+    'mustafar': (
+        'primary': #920e13,
+
+        'background-normal': #b10005,
+        'background-light': #f7651a,
+        'background-dark': #920e13,
+
+        // 'text-light': #ffffff,
+
+        'color1': #b10005,
+        'color2': #bc603f,
+        'color3': #920e13,
+        'color4': #fe8925,
+        'color5': #f7651a,
+    ),
+) !default;
+
+@mixin themify($property, $key, $themes: $themes) {
+
+    & {
+        #{$property}: map-get($defaults, $key);
+    }
+
+    @each $theme, $colors in $themes {
+        &.theme-#{$theme},
+        .theme-#{$theme} & {
+            #{$property}: map-get($colors, $key);
+        }
+    }
+}
+
+@mixin color($args...) {
+    @include themify('color', $args...);
+}
+
+@mixin background-color($args...) {
+    @include themify('background-color', $args...);
+}

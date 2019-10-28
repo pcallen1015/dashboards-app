@@ -1,0 +1,20 @@
+<div mat-dialog-title>Select Widgets:</div>
+<mat-dialog-content>
+  <mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let component of components">
+      <selection-tile
+        [label]="component.name"
+        [icon]="utils.widgetIcon(component.type)"
+        [value]="component">
+      </selection-tile>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="text-center" [style.width.%]="100">
+    <h6><p>Selected: {{selected.length}}</p></h6>
+    <div>
+      <button color="primary" [mat-dialog-close]="selected">Done</button>
+    </div>
+  </div>
+</mat-dialog-actions>

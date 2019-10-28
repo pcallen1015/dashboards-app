@@ -1,0 +1,8 @@
+<div class="workspace-card" [routerLink]="['/workspace/', workspace.slug]">
+  <div *ngIf="ready">
+    <div class="absolute-center">
+        <h4>{{workspace.name}}</h4>
+    </div>
+  </div>
+  <util-overlay type="loading" message="Loading Workspace Details..." *ngIf="!ready"></util-overlay>
+</div>

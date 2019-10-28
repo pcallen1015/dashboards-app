@@ -1,0 +1,37 @@
+.dragdrop {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    > .dragdrop-trash {
+        background-color: transparent;
+        border: 2px dashed #cf2030;
+        color: #cf2030;
+        height: auto;
+        margin: 12px 80px;
+        padding: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: all .1s ease-in-out;
+
+        &.drag-hint {
+            transform: scale(1.05);
+        }
+
+        &.drag-over {
+            background-color: #cf2030;
+            border-color: transparent;
+            color: white;
+        }
+    }
+
+    > .dragdrop-canvas {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        flex: 1;
+    }
+}

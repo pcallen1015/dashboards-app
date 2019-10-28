@@ -1,0 +1,30 @@
+<form (ngSubmit)="submit()" [formGroup]="form">
+
+  <div style="text-align: initial; margin-bottom: 1.5rem;">
+    <!-- Name -->
+    <mat-form-field>
+      <input matInput type="text" formControlName="name" placeholder="Name" />
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field>
+      <textarea matInput formControlName="description" placeholder="Description"></textarea>
+    </mat-form-field>
+
+    <!-- Slug -->
+    <!--
+    <mat-form-field>
+      <input matInput type="text" formControlName="slug" placeholder="Slug" />
+    </mat-form-field>
+    -->
+
+    <!-- Columns -->
+    <mat-form-field>
+      <input matInput type="number" formControlName="columns" placeholder="Number of Columns" [min]="min" [max]="max" />
+    </mat-form-field>
+
+  </div>
+
+  <button color="primary" type="submit" [disabled]="!form.valid">Accept</button>
+  <button color="negative" type="button" (click)="cancel()">Cancel</button>
+</form>
