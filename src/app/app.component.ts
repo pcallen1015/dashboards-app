@@ -71,7 +71,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   private initApplication(): Observable<void> {
     // TODO: this Application ID shouldn't be hard-coded
-    return this.applicationService.getApplicationById('bmi').pipe(map((application: Application) => {
+    return this.applicationService.getApplicationById(environment.rootApplicationId).pipe(map((application: Application) => {
       this._application = application;
       this.applicationService.activateApplication(this._application);
       this.applicationService.setApplicationTitle(this._application.name);

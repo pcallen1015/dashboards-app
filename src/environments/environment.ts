@@ -4,7 +4,8 @@
 
 export const environment = {
   name: 'Dashboards (Dev)',
-  production: false
+  production: false,
+  rootApplicationId: 'dashboards-example'
 };
 
 /*
