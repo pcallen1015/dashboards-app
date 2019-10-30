@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule, MatButtonModule } from '@angular/material';
 
 import { ContentModule } from '../content/content.module';
 
@@ -12,6 +12,7 @@ import { PresentationSlideComponent } from './presentation-slide/presentation-sl
     CommonModule,
 
     MatDialogModule,
+    MatButtonModule,
 
     ContentModule,
   ],

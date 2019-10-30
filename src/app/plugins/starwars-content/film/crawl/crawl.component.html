@@ -9,6 +9,8 @@
       <div [innerHtml]="content"></div>
     </div>
   </div>
-  <button (click)="pause()" style="position: absolute; right: 0; bottom: 0;">{{paused ? 'Resume' : 'Pause'}}</button>
+  <button mat-icon-button (click)="pause()" style="position: absolute; right: 0; bottom: 0;">
+    <i class="fas {{paused ? 'fa-play' : 'fa-pause'}}"></i>
+  </button>
 </div>
   

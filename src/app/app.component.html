@@ -4,7 +4,7 @@
             <div class="sidebar__header">
                 <div *ngIf="sidenavOptions.title" class="sidebar__header-title">{{sidenavOptions.title}}</div>
                 <div *ngIf="sidenavOptions.toolbar && sidenavOptions.toolbar.buttons.length > 0" class="sidebar__header-toolbar">
-                    <button *ngFor="let button of sidenavOptions.toolbar.buttons" (click)="button.action()">
+                    <button mat-icon-button *ngFor="let button of sidenavOptions.toolbar.buttons" (click)="button.action()">
                         <i [ngClass]="button.icon"></i>
                     </button>
                 </div>
@@ -22,8 +22,12 @@
     </mat-sidenav>
     <div class="app__content">
         <div class="app__header">
-            <!-- <cui-header [options]="headerOptions"></cui-header> -->
-            <div>Some Header <button (click)="toggleSidenav()">Nav</button></div>
+            <mat-toolbar>
+                <button mat-icon-button (click)="toggleSidenav()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <span>Dashboards</span>
+            </mat-toolbar>
         </div>
         <div class="app__body">
             <router-outlet *ngIf="ready && !error"></router-outlet>

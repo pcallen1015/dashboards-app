@@ -12,28 +12,28 @@
           <!-- <button (click)="debug()">Debug</button> -->
           <!-- <button (click)="refresh()">Refresh</button> -->
           <!-- <button (click)="reflow()">Reflow</button> -->
-          <button color="gray-ghost" (click)="present()" *ngIf="!editing && hasContent" [disabled]="presenting">
-            <span class="icon-slides"></span>
+          <button mat-raised-button (click)="present()" *ngIf="!editing && hasContent" [disabled]="presenting">
+            <i class="fas fa-tv"></i>
             <span>Present</span>
           </button>
-          <button (click)="undo()" *ngIf="editing && hasChanges">
-            <span class="icon-back"></span>
+          <button mat-raised-button (click)="undo()" *ngIf="editing && hasChanges">
+            <i class="fas fa-undo"></i>
             <span>Undo</span>
           </button>
-          <button color="gray-ghost" *ngIf="editing" (click)="addWidget()">
-            <span class="icon-add"></span>
+          <button mat-raised-button *ngIf="editing" (click)="addWidget()">
+            <i class="fas fa-plus"></i>
             <span>Widget</span>
           </button>
-          <button color="primary" *ngIf="!editing" (click)="edit()">
-            <span class="icon-edit"></span>
+          <button mat-raised-button *ngIf="!editing" (click)="edit()">
+            <i class="fas fa-edit"></i>
             <span>Edit</span>
           </button>
-          <button color="primary" *ngIf="editing" (click)="save()" [disabled]="saving">
-            <span class="icon-save"></span>
+          <button mat-raised-button *ngIf="editing" (click)="save()" [disabled]="saving">
+            <i class="fas fa-save"></i>
             <span>Save</span>
           </button>
-          <button color="negative" *ngIf="editing" (click)="cancel()">
-            <span class="icon-close"></span>
+          <button mat-raised-button *ngIf="editing" (click)="cancel()">
+            <i class="fas fa-times"></i>
             <span>Cancel</span>
           </button>
         </div>

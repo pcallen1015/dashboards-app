@@ -3,15 +3,15 @@
     <!-- Editing Actions -->
     <div class="widget__section" *ngIf="editing">
         <span class="widget__handle">
-        <button>
-            <i class="fas fa-arrows-alt fa-2x"></i>
+        <button mat-icon-button>
+            <i class="fas fa-arrows-alt"></i>
         </button>
         </span>
-        <button (click)="configure()">
-            <i class="fas fa-cog fa-2x"></i>
+        <button mat-icon-button (click)="configure()">
+            <i class="fas fa-cog"></i>
         </button>
-        <button (click)="remove()">
-            <i class="fas fa-trash-alt fa-2x"></i>
+        <button mat-icon-button (click)="remove()">
+            <i class="fas fa-trash-alt"></i>
         </button>
     </div>
 

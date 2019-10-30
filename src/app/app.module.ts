@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {
   MatSidenavModule,
+  MatToolbarModule,
+  MatButtonModule,
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -29,6 +31,9 @@ import { ApplicationService } from './application.service';
   imports: [
     BrowserModule,
     MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+
     AppRoutingModule.forRoot(),
     UiCoreModule,
     PluginsModule,

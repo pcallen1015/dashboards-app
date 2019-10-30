@@ -7,15 +7,15 @@
   </div>
   <div class="slide__actions">
     <div class="btn-group">
-      <button *ngIf="hasPrevious" color="gray-ghost" (click)="back()">
+      <button mat-raised-button *ngIf="hasPrevious" (click)="back()">
         <span class="icon-chevron-left"></span>
         <span>Back</span>
       </button>
-      <button *ngIf="hasNext" color="gray-ghost" (click)="next()">
+      <button mat-raised-button *ngIf="hasNext" (click)="next()">
         <span>Next</span>
         <span class="icon-chevron-right"></span>
       </button>
     </div>
-    <button color="negative" (click)="end()">End</button>
+    <button mat-raised-button (click)="end()">End</button>
   </div>
 </div>

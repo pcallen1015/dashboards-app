@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material';
 
 import { ContentModule } from './content/content.module';
 import { DialogsModule } from './dialogs/dialogs.module';
@@ -10,6 +11,7 @@ import { UtilsModule } from './utils/utils.module';
 @NgModule({
   imports: [
     CommonModule,
+    MatButtonModule,
 
     ContentModule.forRoot(),
     DialogsModule,
@@ -18,6 +20,8 @@ import { UtilsModule } from './utils/utils.module';
     UtilsModule
   ],
   exports: [
+    MatButtonModule,
+    
     ContentModule,
     DialogsModule,
     NotificationsModule,
