@@ -1,5 +1,12 @@
 # Dashboards
 
+`dashboards-app` is an exploration into configuration-driven, grid/tile-based web application design. Some objectives:
+* Configuration-driven: views (and groups of views) should be defined in data, allowing users/administrators to modify the composition of the application at runtime
+* Plug-and-play tile/widget development experience: developers should have a framework for developing new widgets/tiles, and those new widgets/tiles should be easy to insert into the existing framework
+  - Runtime onboarding of new widgets/tiles?
+* Full-screen presentation: have the ability to display any widget/tile in a full-screen format
+* Theming: ability to customize styling of application for different views/spaces
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Development server
