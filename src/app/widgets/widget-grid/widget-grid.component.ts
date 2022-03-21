@@ -46,7 +46,13 @@ export class WidgetGridComponent implements OnInit, OnChanges, AfterViewInit {
     resizable: false,
     floating: true,
     shrink: true,
-    /*
+    
+    /**
+     * The 'lanes' value for each breakpoint
+     * should be related to the 'lanes' property
+     * for the Widget Grid itself
+     */
+    responsiveView: true,
     responsiveOptions: [
       {
         breakpoint: 'sm',
@@ -58,15 +64,14 @@ export class WidgetGridComponent implements OnInit, OnChanges, AfterViewInit {
         minWidth: 768,
       }, {
         breakpoint: 'lg',
-        lanes: 6,
+        lanes: 4,
         minWidth: 992,
       }, {
         breakpoint: 'xl',
-        lanes: 8,
+        lanes: 6,
         minWidth: 1200,
       },
     ],
-    */
   };
 
   constructor(private widgetsService: WidgetsService) {}
@@ -101,6 +106,7 @@ export class WidgetGridComponent implements OnInit, OnChanges, AfterViewInit {
 
   public ngOnChanges(changes: SimpleChanges): void {
     this.updateGridster();
+    if (this.gridster) console.debug(this.gridster.options);
   }
 
   public present(): void {

@@ -31,7 +31,6 @@ export class StarshipComponent extends StarwarsInfoComponent implements OnChange
   }
 
   private init(): void {
-    console.debug('STARSHIP');
     this.initData().subscribe(() => {
       this.onReady.emit(true);
     });

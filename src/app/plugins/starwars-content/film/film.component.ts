@@ -33,7 +33,6 @@ export class FilmComponent extends StarwarsInfoComponent implements OnChanges {
   }
 
   private init(): void {
-    console.debug('FILM');
     this.initData().subscribe(() => {
       this.onReady.emit(true);
     });

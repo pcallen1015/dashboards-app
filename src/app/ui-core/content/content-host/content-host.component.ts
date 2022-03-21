@@ -1,17 +1,13 @@
-import { 
-  Component, 
+import {
+  Component,
   ComponentFactoryResolver,
-  Input, 
-  OnInit, 
+  OnInit,
   ViewChild,
-  OnChanges,
-  SimpleChanges,
   DoCheck,
 } from '@angular/core';
 
 import { ContentComponent } from '../content-component';
 import { ContentHostDirective } from './content-host.directive';
-import { ContentConfig } from '../content-config';
 import { ContentService } from '../content.service';
 import { ContentConfigOption } from '../content-config-option';
 import { ContentContainer } from '../content-container';

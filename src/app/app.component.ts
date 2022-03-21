@@ -83,14 +83,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   private init(): void {
     this._ready = false;
-
-    // TEMP: test api call
-    this.applicationService.applications.subscribe((apps: Application[]) => {
-      console.debug(apps);
-    }, (error: Error) => {
-      console.error(error.message);
-    });
-
     this.authenticationService.login().pipe(flatMap((currentUser: User) => {
       return this.initApplication();
     })).subscribe(() => {

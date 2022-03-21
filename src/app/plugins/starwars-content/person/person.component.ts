@@ -31,7 +31,6 @@ export class PersonComponent extends StarwarsInfoComponent implements OnChanges 
   }
 
   private init(): void {
-    console.debug('PERSON');
     this.initData().subscribe(() => {
       this.onReady.emit(true);
     });
